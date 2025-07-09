@@ -1,5 +1,18 @@
 "use strict";
 
+const imgEl = document.getElementById("bg_img");
+const imgCoverEl = document.getElementById(cover);
+const musicTitleEl = document.getElementById("music_title");
+const musicArtistEl = document.getElementById("music_artist");
+const playerProgressEl = document.getElementById("player_progress");
+const progressEl = document.getElementById("progress");
+const currentTimeEl = document.getElementById("current_time");
+const durationEl = document.getElementById("duration");
+
+const prevBtnEl = document.getElementById("prev");
+const playBtnEl = document.getElementById("play");
+const nextBtnEl = document.getElementById("next");
+
 songs = [
     {
         path: "audio/Touch The Sky (From BraveSoundtrack).mp3",
@@ -26,3 +39,8 @@ songs = [
         artist: "Ramin Djawadi",
     },
 ];
+
+const music = new Audio();
+
+let musicIndex = 0;
+let isPlaying = false;
