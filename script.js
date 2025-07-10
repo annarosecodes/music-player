@@ -13,7 +13,7 @@ const prevBtnEl = document.getElementById("prev");
 const playBtnEl = document.getElementById("play");
 const nextBtnEl = document.getElementById("next");
 
-songs = [
+const songs = [
     {
         path: "audio/Touch The Sky (From BraveSoundtrack).mp3",
         displayName: "Touch The Sky",
@@ -44,3 +44,34 @@ const music = new Audio();
 
 let musicIndex = 0;
 let isPlaying = false;
+
+// Play song set up as a boolean // 
+
+function togglePlay(){
+    if(isPlaying){
+        pauseMusic();
+    } else{ 
+        playMusic();
+    }
+}
+
+// Play music // 
+
+function playMusic(){
+    isPlaying = true;
+    playBtnEl.classList.replace('fa-play', 'fa-pause');
+    playBtnEl.setAttribute("title", "pause");
+}
+
+// Pause music //
+function pauseMusic(){
+    isPlaying = false;
+    playBtnEl.classList.replace('fa-pause', 'fa-play');
+    playBtnEl.setAttribute("pause", "title");
+}
+
+const btnEvents = () => {
+   playBtnEl.addEventListener("click", togglePlay);
+};
+
+document.addEventListener("DOMContentLoaded", btnEvents);
